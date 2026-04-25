@@ -13,7 +13,7 @@ public class DbConnection {
 			//step 1: Load the driver
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			//step 2: Establish the connection
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookVault", "user_name", "password");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookVault", "root", "your_mysql_password");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
