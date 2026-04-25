@@ -2,6 +2,13 @@
 
 BookVault is a Java-based console application designed to manage a digital bookstore. It features a complete shopping pipeline from browsing inventory to securely processing orders. The project is built using strict 3-Tier MVC architecture and connects to a MySQL database using JDBC.
 
+## 🚨 IMPORTANT: Admin Access & Setup
+The default Admin credentials are hardcoded into the application logic to ensure system recovery. You will need these to access the inventory management dashboard:
+* **Admin Login:** `admin@bookvault.com`
+* **Admin Password:** `admin123`
+
+*(Note: In your database connection file, be sure to replace the placeholder password with your own local MySQL password before running the application).*
+
 ## ⚙️ Tech Stack
 * **Language:** Java (JDK 8+)
 * **Database:** MySQL
@@ -16,7 +23,7 @@ BookVault is a Java-based console application designed to manage a digital books
 * **Historical Tracking:** Uses junction tables (`order_items`) to maintain a permanent record of past orders and prices, even if the user clears their cart.
 
 ## 🗄️ Database Structure
-The system uses a normalized relational database containing 6 core tables:
+The system uses a normalized relational database containing 6 core tables. **Please import the provided `BookVault_Database.sql` file into your MySQL client before running the application.**
 1. `Users` - Stores customer credentials and details.
 2. `Books` - Stores inventory, pricing, and descriptions.
 3. `Cart` - A temporary bridge table managing active shopping sessions.
@@ -39,5 +46,6 @@ The system uses a normalized relational database containing 6 core tables:
    ```java
    String user = "root"; 
    String password = "your_mysql_password_here"; // Replace with your password
+5. Ensure the MySQL JDBC Driver (mysql-connector-java.jar) is added to your project's Build Path.
 
-   
+6. Run the MainDashBoard.java file to start the application in your console.
